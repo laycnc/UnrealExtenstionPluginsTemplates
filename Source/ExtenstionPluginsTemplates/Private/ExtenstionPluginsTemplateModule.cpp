@@ -3,9 +3,12 @@
 #include "CoreMinimal.h"
 #include "Modules/ModuleManager.h"
 #include "IPluginBrowser.h"
+#include "Interfaces/IPluginManager.h"
 #include "Features/EditorFeatures.h"
 #include "Features/IPluginsEditorFeature.h"
 #include "ExtenstionPluginsTemplateSettings.h"
+
+#define LOCTEXT_NAMESPACE "FExtenstionPluginsTemplatesModule"
 
 class FExtenstionPluginsTemplatesModule : public IModuleInterface
 {
@@ -20,8 +23,6 @@ private:
 
 };
 
-#define LOCTEXT_NAMESPACE "FExtenstionPluginsTemplatesModule"
-
 void FExtenstionPluginsTemplatesModule::StartupModule()
 {
 	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
@@ -34,19 +35,34 @@ void FExtenstionPluginsTemplatesModule::StartupModule()
 			PluginEditor.RegisterPluginTemplate(TemplateDescription.ToSharedRef());
 		}
 
-        for ( const FExtenstionPluginsTemplateData& Template : GetDefault<UExtenstionPluginsTemplateSettings>()->PluginTemplates )
-        {
-			FText InName = Template.Label;
-			FText InDescription = Template.Description;
-			FString InOnDiskPath  = Template.Path.Path;
-			bool    InCanContainContent = false;
-			EHostType::Type InModuleDescriptorType = EHostType::Runtime;
-            ELoadingPhase::Type InLoadingPhase = ELoadingPhase::Default;
+        IPluginManager& PluginManager = IPluginManager::Get();
+		auto ExtenstionPluginsTemplatesPlugin = PluginManager.GetModuleOwnerPlugin(TEXT("ExtenstionPluginsTemplates"));
+		if ( ExtenstionPluginsTemplatesPlugin.IsValid() )
+		{
+			// ExtenstionPluginsTemplates plugin base dir
+			const FString BaseDir = ExtenstionPluginsTemplatesPlugin->GetBaseDir();
 
-            TSharedPtr<FPluginTemplateDescription> Description = MakeShareable(new FPluginTemplateDescription( InName, InDescription, InOnDiskPath, InCanContainContent, InModuleDescriptorType, InLoadingPhase ));
-			PluginTemplateDescriptions.Add(Description);
-            PluginEditor.RegisterPluginTemplate(Description.ToSharedRef());
-        }
+			for ( const FExtenstionPluginsTemplateData& Template :
+			      GetDefault<UExtenstionPluginsTemplateSettings>()->PluginTemplates )
+			{
+				FText               InName                 = Template.Label;
+				FText               InDescription          = Template.Description;
+				FString             InOnDiskPath = BaseDir + "/" + Template.Path;
+				bool                InCanContainContent    = false;
+				EHostType::Type     InModuleDescriptorType = EHostType::Runtime;
+				ELoadingPhase::Type InLoadingPhase         = ELoadingPhase::Default;
+
+				TSharedPtr<FPluginTemplateDescription> Description = MakeShareable(
+				    new FPluginTemplateDescription(InName,
+				                                   InDescription,
+				                                   InOnDiskPath,
+				                                   InCanContainContent,
+				                                   InModuleDescriptorType,
+				                                   InLoadingPhase));
+				PluginTemplateDescriptions.Add(Description);
+				PluginEditor.RegisterPluginTemplate(Description.ToSharedRef());
+			}
+		}
 
 	}
 

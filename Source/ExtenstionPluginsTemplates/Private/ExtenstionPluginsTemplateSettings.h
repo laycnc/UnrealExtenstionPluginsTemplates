@@ -12,7 +12,7 @@ struct FExtenstionPluginsTemplateData
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, Category = PluginTemplate, meta = (RelativePath))
-	FDirectoryPath Path;
+	FString Path;
 
 	UPROPERTY(EditAnywhere, Category = PluginTemplate)
 	FText Label;
