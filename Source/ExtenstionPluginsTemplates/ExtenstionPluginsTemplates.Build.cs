@@ -32,7 +32,8 @@ public class ExtenstionPluginsTemplates : ModuleRules
 				"SlateCore",
                 "PluginBrowser",
                 "UnrealEd",
-                "DeveloperSettings"
+                "DeveloperSettings",
+                "Projects"
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);

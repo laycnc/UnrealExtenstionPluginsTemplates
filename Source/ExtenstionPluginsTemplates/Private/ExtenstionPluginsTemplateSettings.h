@@ -31,7 +31,7 @@ struct FExtenstionPluginsTemplateData
 UCLASS(config = Editor, defaultconfig)
 class UExtenstionPluginsTemplateSettings : public UDeveloperSettings
 {
-	GENERATED_BODY()
+	GENERATED_UCLASS_BODY()
 public:
 	// Array of Plugin templates. Allows projects to specify reusable plugin templates for the plugin creation wizard.
 	UPROPERTY(config, EditAnywhere, Category = Plugins)
