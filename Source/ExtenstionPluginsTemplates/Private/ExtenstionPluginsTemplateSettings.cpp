@@ -26,6 +26,15 @@ UExtenstionPluginsTemplateSettings::UExtenstionPluginsTemplateSettings(const FOb
 
 		PluginTemplates.Add(MinimalAssetEditorTemplate);
 	}
+	{
+		FExtenstionPluginsTemplateData MinimalMovieSceneTemplate = {};
+		MinimalMovieSceneTemplate.Path  = TEXT("Templates/MinimalMovieScene");
+		MinimalMovieSceneTemplate.Label = LOCTEXT("MinimalMovieScene_Label", "MinimalMovieScene");
+		MinimalMovieSceneTemplate.Description = LOCTEXT("MinimalMovieScene_Description", "Create a movie scene track with minimal configuration");
+		MinimalMovieSceneTemplate.bIsEnabledByDefault = false;
+
+		PluginTemplates.Add(MinimalMovieSceneTemplate);
+	}
 }
 
 #undef LOCTEXT_NAMESPACE
