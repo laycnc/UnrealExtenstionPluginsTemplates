@@ -2,6 +2,7 @@
 
 #include "AssetTypeActions/AssetTypeActions_PLUGIN_NAME.h"
 #include "PLUGIN_NAME.h"
+#include "Editor/PLUGIN_NAMEEditor.h"
 
 #define LOCTEXT_NAMESPACE "FAssetTypeActions_PLUGIN_NAME"
 
