@@ -35,6 +35,15 @@ UExtenstionPluginsTemplateSettings::UExtenstionPluginsTemplateSettings(const FOb
 
 		PluginTemplates.Add(MinimalMovieSceneTemplate);
 	}
+	{
+		FExtenstionPluginsTemplateData MinimalMovieSceneTemplate = {};
+		MinimalMovieSceneTemplate.Path  = TEXT("Templates/MinimalGraph");
+		MinimalMovieSceneTemplate.Label = LOCTEXT("MinimalGraph_Label", "MinimalGraph");
+		MinimalMovieSceneTemplate.Description = LOCTEXT("MinimalGraph_Description", "Create a minimally configured graph editor");
+		MinimalMovieSceneTemplate.bIsEnabledByDefault = false;
+
+		PluginTemplates.Add(MinimalMovieSceneTemplate);
+	}
 }
 
 #undef LOCTEXT_NAMESPACE
