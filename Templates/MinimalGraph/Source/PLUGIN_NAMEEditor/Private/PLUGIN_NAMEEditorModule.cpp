@@ -4,8 +4,10 @@
 #include "Modules/ModuleManager.h"
 #include "IAssetTools.h"
 #include "AIGraphTypes.h"
+#include "EdGraphUtilities.h"
 #include "IPLUGIN_NAMEEditorModule.h"
 #include "AssetTypeActions/AssetTypeActions_PLUGIN_NAME.h"
+#include "Editor/GraphPanelNodeFactory_PLUGIN_NAME.h"
 #include "PLUGIN_NAMENode.h"
 
 #define LOCTEXT_NAMESPACE "FPLUGIN_NAMEEditorModule"
@@ -24,8 +26,9 @@ public:
 	virtual void                              ShutdownModule() override;
 	virtual TSharedPtr<FGraphNodeClassHelper> GetClassCache() override;
 private:
-	TSharedPtr<IAssetTypeActions>     PLUGIN_NAMETypeAction;
-	TSharedPtr<FGraphNodeClassHelper> ClassCache;
+	TSharedPtr<IAssetTypeActions>     	PLUGIN_NAMETypeAction;
+	TSharedPtr<FGraphPanelNodeFactory>	GraphPanelNodeFactory_PLUGIN_NAME;
+	TSharedPtr<FGraphNodeClassHelper>	ClassCache;
 };
 
 void FPLUGIN_NAMEEditorModule::StartupModule()
@@ -39,6 +42,9 @@ void FPLUGIN_NAMEEditorModule::StartupModule()
 		PLUGIN_NAMETypeAction = MakeShareable(new FAssetTypeActions_PLUGIN_NAME());
 		AssetTools.RegisterAssetTypeActions(PLUGIN_NAMETypeAction.ToSharedRef());
 	}
+
+	GraphPanelNodeFactory_PLUGIN_NAME = MakeShareable( new FGraphPanelNodeFactory_PLUGIN_NAME() );
+	FEdGraphUtilities::RegisterVisualNodeFactory(GraphPanelNodeFactory_PLUGIN_NAME);
 }
 
 void FPLUGIN_NAMEEditorModule::ShutdownModule()
@@ -52,6 +58,12 @@ void FPLUGIN_NAMEEditorModule::ShutdownModule()
 
 		AssetTools.UnregisterAssetTypeActions(PLUGIN_NAMETypeAction.ToSharedRef());
 		PLUGIN_NAMETypeAction.Reset();
+	}
+
+	if ( GraphPanelNodeFactory_PLUGIN_NAME.IsValid() )
+	{
+		FEdGraphUtilities::UnregisterVisualNodeFactory(GraphPanelNodeFactory_PLUGIN_NAME);
+		GraphPanelNodeFactory_PLUGIN_NAME.Reset();
 	}
 }
 
