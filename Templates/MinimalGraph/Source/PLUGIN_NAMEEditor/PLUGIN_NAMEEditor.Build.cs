@@ -42,7 +42,9 @@ public class PLUGIN_NAMEEditor : ModuleRules
 				"UnrealEd",
 				"AssetTools",
 				"GraphEditor",
-				"AIGraph"
+				"AIGraph",
+				"ToolMenus",
+				"ApplicationCore"
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
