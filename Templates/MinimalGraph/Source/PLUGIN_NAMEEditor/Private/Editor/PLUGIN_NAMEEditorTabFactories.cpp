@@ -31,7 +31,7 @@ void FPLUGIN_NAMEGraphEditorSummoner::OnTabActivated(TSharedPtr<SDockTab> Tab) c
 {
 	check(EditorPtr.IsValid());
 	TSharedRef<SGraphEditor> GraphEditor = StaticCastSharedRef<SGraphEditor>(Tab->GetContent());
-	//EditorPtr.Pin()->OnGraphEditorFocused(GraphEditor);
+	EditorPtr.Pin()->OnGraphEditorFocused(GraphEditor);
 }
 
 void FPLUGIN_NAMEGraphEditorSummoner::OnTabRefreshed(TSharedPtr<SDockTab> Tab) const

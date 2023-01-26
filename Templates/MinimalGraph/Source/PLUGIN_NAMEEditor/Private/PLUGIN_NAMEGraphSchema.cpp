@@ -183,7 +183,21 @@ void UPLUGIN_NAMEGraphSchema::GetContextMenuActions(
     class UToolMenu*                    Menu,
     class UGraphNodeContextMenuContext* Context) const
 {
-	// todo
+	if ( Context->Node )
+	{
+		{
+			FToolMenuSection& Section =
+			    Menu->AddSection("KooolGraphSchemaNodeActions",
+			                     LOCTEXT("ClassActionsMenuHeader", "Node Actions"));
+			Section.AddMenuEntry(FGenericCommands::Get().Delete);
+			Section.AddMenuEntry(FGenericCommands::Get().Cut);
+			Section.AddMenuEntry(FGenericCommands::Get().Copy);
+			Section.AddMenuEntry(FGenericCommands::Get().Duplicate);
+
+			Section.AddMenuEntry(FGraphEditorCommands::Get().BreakNodeLinks);
+		}
+	}
+
 	Super::GetContextMenuActions(Menu, Context);
 }
 
