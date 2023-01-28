@@ -3,10 +3,10 @@
     "Version": 1,
     "VersionName": "1.0",
     "FriendlyName": "ExtenstionPluginsTemplates",
-    "Description": "",
-    "Category": "Other",
-    "CreatedBy": "",
-    "CreatedByURL": "",
+    "Description": "Additional Plug-in Templates",
+    "Category": "Editor",
+    "CreatedBy": "https://github.com/laycnc",
+    "CreatedByURL": "https://github.com/laycnc/UnrealSaveDataPipeline",
     "DocsURL": "",
     "MarketplaceURL": "",
     "SupportURL": "",
@@ -25,6 +25,12 @@
         {
             "Name": "PluginBrowser",
             "Enabled": true
+        }
+    ],
+    "LocalizationTargets": [
+        {
+            "Name": "ExtenstionPluginsTemplates",
+            "LoadingPolicy": "Always"
         }
     ]
 }
