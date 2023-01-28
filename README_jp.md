@@ -7,7 +7,7 @@
 
 # MinimalAsset
 
-`MinimalAsset`テンプレートでは下記の要素が作成されます。  
+`MinimalAsset`テンプレートでは、下記の要素が作成されます。  
 
 * ゲームランタイムモジュールの作成
 * エディターモジュールの作成
@@ -19,3 +19,22 @@
 * アセット`Factory`の作成  
   アセットを作成時のロジックを制御するコードを作成します。
 
+# MinimalAssetEditor
+
+`MinimalAssetEditor`テンプレートでは、`MinimalAsset`テンプレートを元に以下の要素を追加した物が作成されます。  
+
+* エディター向けの`Commands`
+* `FWorkflowCentricApplication`を継承した専用のエディターを作成する為の最小限コード  
+
+![Minimal Asset Editor](https://raw.githubusercontent.com/laycnc/UnrealExtenstionPluginsTemplates/readme-images/Images/MinimalAssetEditor.png "最小限のエディター")
+
+# MinimalGraph
+
+`MinimalGraph`テンプレートでは、`BehaviorTree`関連のコードを元に最小限のグラフ作成機能を用意しました。
+
+* UndoRedo
+* 基本的なコンテキストメニュー  
+  ![コンテキストメニュー](https://raw.githubusercontent.com/laycnc/UnrealExtenstionPluginsTemplates/readme-images/Images/GraphNodeContextMenu.png "基本的なコンテキストメニュー")
+* `FGraphNodeClassHelper`を使い`UPLUGIN_NAMENode`を継承したクラスの自動配置
+
+![ほげほげ](https://raw.githubusercontent.com/laycnc/UnrealExtenstionPluginsTemplates/readme-images/Images/MinimalGraphExample.gif)
