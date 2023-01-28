@@ -12,6 +12,6 @@
 UCLASS(MinimalAPI)
 class UMovieScenePLUGIN_NAMESection : public UMovieSceneSection
 {
-	GENERATED_BODY()
+	GENERATED_UCLASS_BODY()
 	
 };

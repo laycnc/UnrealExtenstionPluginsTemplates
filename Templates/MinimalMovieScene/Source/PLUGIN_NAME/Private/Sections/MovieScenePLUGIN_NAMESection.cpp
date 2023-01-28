@@ -3,3 +3,8 @@
 
 #include "Sections/MovieScenePLUGIN_NAMESection.h"
 
+UMovieScenePLUGIN_NAMESection::UMovieScenePLUGIN_NAMESection(const FObjectInitializer& ObjectInitializer)
+    : Super(ObjectInitializer)
+{
+	SetRange(TRange<FFrameNumber>::All());
+}
