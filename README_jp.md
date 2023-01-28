@@ -37,4 +37,15 @@
   ![コンテキストメニュー](https://raw.githubusercontent.com/laycnc/UnrealExtenstionPluginsTemplates/readme-images/Images/GraphNodeContextMenu.png "基本的なコンテキストメニュー")
 * `FGraphNodeClassHelper`を使い`UPLUGIN_NAMENode`を継承したクラスの自動配置
 
-![ほげほげ](https://raw.githubusercontent.com/laycnc/UnrealExtenstionPluginsTemplates/readme-images/Images/MinimalGraphExample.gif)
+![Graphエディターサンプル](https://raw.githubusercontent.com/laycnc/UnrealExtenstionPluginsTemplates/readme-images/Images/MinimalGraphExample.gif)
+
+# MinimalMovieScene
+
+`MinimalMovieScene`テンプレートでは、シーケンサーで使われるトラック＋トラックエディターの最小構成のコード
+
+* シーケンサーのトラック
+* トラックセクション
+
+![CreateNewTrack](https://raw.githubusercontent.com/laycnc/UnrealExtenstionPluginsTemplates/readme-images/Images/CreateNewTrack.gif
+ "Create New Track")
+
