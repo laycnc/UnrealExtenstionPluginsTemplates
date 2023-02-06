@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+
 #include "Editor/SGraphNode_PLUGIN_NAME.h"
 #include "GenericPlatform/ICursor.h"
 #include "Misc/Optional.h"

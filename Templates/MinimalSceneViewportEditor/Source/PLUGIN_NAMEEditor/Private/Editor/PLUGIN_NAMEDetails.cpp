@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+
 
 #include "Editor/PLUGIN_NAMEDetails.h"
 #include "Modules/ModuleManager.h"

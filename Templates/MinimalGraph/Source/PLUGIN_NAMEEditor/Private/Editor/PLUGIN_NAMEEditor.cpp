@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+
 
 #include "PLUGIN_NAMEEditor.h"
 #include "Misc/CoreMisc.h"

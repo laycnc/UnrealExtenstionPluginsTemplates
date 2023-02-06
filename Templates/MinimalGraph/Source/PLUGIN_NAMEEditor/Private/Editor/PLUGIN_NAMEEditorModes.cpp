@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+
 #include "PLUGIN_NAMEEditorModes.h"
 #include "Editor/PLUGIN_NAMEEditorTabs.h"
 #include "Editor/PLUGIN_NAMEEditorTabFactories.h"

@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+
 
 #include "PLUGIN_NAMEEditorCommands.h"
 #include "Styling/AppStyle.h"

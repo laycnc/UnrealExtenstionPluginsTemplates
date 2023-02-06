@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+
 
 #include "Editor/GraphPanelNodeFactory_PLUGIN_NAME.h"
 #include "Editor/SGraphNode_PLUGIN_NAME.h"
