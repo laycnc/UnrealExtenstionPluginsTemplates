@@ -42,63 +42,6 @@ FText FAdvancedPreviewSceneSettingsTabSummoner::GetTabToolTipText(const FWorkflo
 	return LOCTEXT("AdvancedPreviewSettingsToolTip", "The Advanced Preview Settings tab will let you alter the preview scene's settings.");
 }
 
-
-#if 0
-
-
-//////////////////////////////////////////////////////////////////////////
-// FDetailsTabSummoner
-
-
-FDetailsTabSummoner::FDetailsTabSummoner(TSharedPtr<class FPLUGIN_NAMEEditor> InHostingApp)
-	: FWorkflowTabFactory(FPLUGIN_NAMEEditorTabs::DetailsID, InHostingApp)
-{
-	TabLabel = LOCTEXT("DetailsTab", "Details");
-	TabIcon = FSlateIcon(FEditorStyle::GetStyleSetName(), "LevelEditor.Tabs.Details");
-	bIsSingleton = true;
-
-	ViewMenuDescription = LOCTEXT("DetailsDescription", "Details");
-	ViewMenuTooltip = LOCTEXT("DetailsToolTip", "Shows the details tab for selected objects.");
-
-	Details = SNew(SPLUGIN_NAMEDetails);
-
-	//OnDetailsCreated.ExecuteIfBound(PersonaDetails->DetailsView.ToSharedRef());
-}
-
-TSharedRef<SWidget> FDetailsTabSummoner::CreateTabBody(const FWorkflowTabSpawnInfo& Info) const
-{
-	return Details.ToSharedRef();
-}
-
-FText FDetailsTabSummoner::GetTabToolTipText(const FWorkflowTabSpawnInfo& Info) const
-{
-	return LOCTEXT("PersonaDetailsToolTip", "Edit the details of selected objects.");
-}
-
-//////////////////////////////////////////////////////////////////////////
-// FEasinessEditorTabSummoner
-
-
-FEasinessEditorTabSummoner::FEasinessEditorTabSummoner(TSharedPtr<FPLUGIN_NAMEEditorToolkit> InHostingApp)
-	: FWorkflowTabFactory(FPLUGIN_NAMEEditorTabs::TimelineID, InHostingApp)
-{
-	TabLabel = LOCTEXT("TimelineTab", "Timeline");
-	Editor = SNew(SPLUGIN_NAMEEditor, InHostingApp.ToSharedRef());
-}
-
-TSharedRef<SWidget> FEasinessEditorTabSummoner::CreateTabBody(const FWorkflowTabSpawnInfo& Info) const
-{
-	return Editor.ToSharedRef();
-}
-
-FText FEasinessEditorTabSummoner::GetTabToolTipText(const FWorkflowTabSpawnInfo& Info) const
-{
-	return LOCTEXT("PersonaDetailsToolTip", "Edit the details of selected objects.");
-}
-
-#endif
-
-
 //////////////////////////////////////////////////////////////////////////
 // FPreviewViewportSummoner
 
@@ -147,29 +90,7 @@ FTabSpawnerEntry& FPreviewViewportSummoner::RegisterTabSpawner(TSharedRef<FTabMa
 
 TSharedRef<SWidget> FPreviewViewportSummoner::CreateTabBody(const FWorkflowTabSpawnInfo& Info) const
 {
-#if 0
-	TSharedRef<SAnimationEditorViewportTabBody> NewViewport = SNew(SAnimationEditorViewportTabBody, PreviewScene.Pin().ToSharedRef(), HostingApp.Pin().ToSharedRef(), ViewportIndex)
-		.BlueprintEditor(BlueprintEditor.Pin())
-		.OnInvokeTab(FOnInvokeTab::CreateSP(HostingApp.Pin().Get(), &FPLUGIN_NAMEEditor::InvokeTab))
-		.AddMetaData<FTagMetaData>(TEXT("Persona.Viewport"))
-		.Extenders(Extenders)
-		.ContextName(ContextName)
-		.OnGetViewportText(OnGetViewportText)
-		.ShowShowMenu(bShowShowMenu)
-		.ShowLODMenu(bShowLODMenu)
-		.ShowPlaySpeedMenu(bShowPlaySpeedMenu)
-		.ShowTimeline(bShowTimeline)
-		.ShowStats(bShowStats)
-		.AlwaysShowTransformToolbar(bAlwaysShowTransformToolbar)
-		.ShowFloorOptions(bShowFloorOptions)
-		.ShowTurnTable(bShowTurnTable)
-		.ShowPhysicsMenu(bShowPhysicsMenu);
-
-	OnViewportCreated.ExecuteIfBound(NewViewport);
-	return NewViewport;
-#else
 	return SNew(SPLUGIN_NAMEViewport, HostingAppPtr.Pin().ToSharedRef());
-#endif
 }
 
 #undef LOCTEXT_NAMESPACE
