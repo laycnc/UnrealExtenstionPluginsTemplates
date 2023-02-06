@@ -53,4 +53,11 @@ In the `MinimalMovieScene` template, the code for the minimum configuration of t
 ![CreateNewTrack](https://raw.githubusercontent.com/laycnc/UnrealExtenstionPluginsTemplates/readme-images/Images/CreateNewTrack.gif
  "Create New Track")
 
+# MinimalSceneViewportEditor
 
+The `MinimalSceneViewportEditor` template provides the minimal configuration for a viewport
+
+* Viewport
+* Viewport Settings
+
+![MinimalSceneViewportEditor](https://raw.githubusercontent.com/laycnc/UnrealExtenstionPluginsTemplates/readme-images/Images/MinimalSceneViewportEditor.png "Minimal Scene Viewport Editor")

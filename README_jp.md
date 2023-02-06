@@ -49,3 +49,11 @@
 ![CreateNewTrack](https://raw.githubusercontent.com/laycnc/UnrealExtenstionPluginsTemplates/readme-images/Images/CreateNewTrack.gif
  "Create New Track")
 
+# MinimalSceneViewportEditor
+
+MinimalSceneViewportEditor`テンプレートは、ビューポートの最小限の設定を提供します。
+
+* ビューポート
+* ビューポートの設定
+
+![MinimalSceneViewportEditor](https://raw.githubusercontent.com/laycnc/UnrealExtenstionPluginsTemplates/readme-images/Images/MinimalSceneViewportEditor.png "Minimal Scene Viewport Editor")

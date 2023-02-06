@@ -53,13 +53,14 @@ FPLUGIN_NAMEEditorMode::FPLUGIN_NAMEEditorMode(TSharedRef<FPLUGIN_NAMEEditor> In
 				->Split
 				(
 					FTabManager::NewStack()
-					->SetSizeCoefficient(0.2f)
+					->SetSizeCoefficient(0.6f)
 					->AddTab(FPLUGIN_NAMEEditorTabs::ViewportInstanceToTabName(0), ETabState::OpenedTab)
 				)
 				->Split
 				(
 					FTabManager::NewStack()
-					->SetSizeCoefficient(0.6f)
+					->SetSizeCoefficient(0.2f)
+					->AddTab(FFestEditorTabs::AdvancedPreviewSceneSettingsID, ETabState::ClosedTab)
 				)
 			)
 			->Split
