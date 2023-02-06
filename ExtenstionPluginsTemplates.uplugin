@@ -8,12 +8,13 @@
     "CreatedBy": "https://github.com/laycnc",
     "CreatedByURL": "https://github.com/laycnc/UnrealSaveDataPipeline",
     "DocsURL": "",
-    "MarketplaceURL": "",
+	"MarketplaceURL" :"com.epicgames.launcher://ue/marketplace/content/8099eca5a0894b13b6cb380ab7126036",
     "SupportURL": "",
     "CanContainContent": true,
     "IsBetaVersion": false,
     "IsExperimentalVersion": false,
     "Installed": false,
+	"WhitelistPlatforms" : ["Win64"],
     "Modules": [
         {
             "Name": "ExtenstionPluginsTemplates",
