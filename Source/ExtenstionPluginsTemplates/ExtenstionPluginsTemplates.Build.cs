@@ -1,5 +1,4 @@
 // Copyright(c) 2023 laycnc
-// Licenced under MIT license. See LICENSE file for details.
 
 using UnrealBuildTool;
 
