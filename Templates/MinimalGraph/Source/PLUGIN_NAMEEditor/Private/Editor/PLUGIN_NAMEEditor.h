@@ -4,12 +4,14 @@
 
 #include "CoreMinimal.h"
 #include "Input/Reply.h"
+#include "GraphEditor.h"
 #include "UObject/GCObject.h"
 #include "EditorUndoClient.h"
 #include "Framework/Docking/TabManager.h"
 #include "WorkflowOrientedApp/WorkflowCentricApplication.h"
 
 class UPLUGIN_NAME;
+class SGraphEditor;
 class FDocumentTracker;
 class FDocumentTabFactory;
 

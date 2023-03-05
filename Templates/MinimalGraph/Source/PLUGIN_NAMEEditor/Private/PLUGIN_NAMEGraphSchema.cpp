@@ -2,6 +2,12 @@
 
 #include "PLUGIN_NAMEGraphSchema.h"
 #include "AIGraphTypes.h"
+#include "ToolMenu.h"
+#include "ToolMenuSection.h"
+#include "EdGraph/EdGraph.h"
+#include "ScopedTransaction.h"
+#include "GraphEditorActions.h"
+#include "Framework/Commands/GenericCommands.h"
 #include "Settings/EditorStyleSettings.h"
 #include "IPLUGIN_NAMEEditorModule.h"
 #include "PLUGIN_NAMENode.h"

@@ -1,5 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 #include "PLUGIN_NAMEGraphNode.h"
+#include "EdGraph/EdGraph.h"
+#include "Engine/Blueprint.h"
+#include "AssetRegistry/AssetData.h"
 
 #define LOCTEXT_NAMESPACE "PLUGIN_NAMEGraphNode"
 

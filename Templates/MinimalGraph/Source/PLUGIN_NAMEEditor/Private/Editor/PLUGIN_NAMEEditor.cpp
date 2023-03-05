@@ -12,9 +12,11 @@
 #include "Editor/PLUGIN_NAMEEditorTabs.h"
 #include "Editor/PLUGIN_NAMEEditorTabFactories.h"
 #include "PLUGIN_NAMEGraph.h"
+#include "PLUGIN_NAMEGraphNode.h"
 #include "PLUGIN_NAMEGraphSchema.h"
 #include "Kismet2/BlueprintEditorUtils.h"
 #include "EdGraphUtilities.h"
+#include "ScopedTransaction.h"
 
 #define LOCTEXT_NAMESPACE "FPLUGIN_NAMEEditor"
 
